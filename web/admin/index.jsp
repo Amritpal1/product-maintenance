@@ -14,7 +14,9 @@
 <form action="reports.jsp" method="post">
     <input type="submit" value="Display Reports">
 </form>
-
+<form action="products" method="get">
+    <input type="submit" value="Display Products">
+</form>
 <!-- these Form tags force a secure connection -->
 <!--
 <form action="https://localhost:8443/musicStore/admin/displayInvoices"

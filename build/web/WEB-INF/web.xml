@@ -7,7 +7,12 @@
     <display-name>Murach's Servlets and JSP: Music Store site</display-name>
     <description>The Music Store web site that's described in 
         Murach's Java Servlets and JSP (second edition)</description>
-    
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/julian</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
     <!-- define a context initialization parameter -->
     <context-param>
         <param-name>custServEmail</param-name>
@@ -15,6 +20,27 @@
     </context-param>
     
     <!-- servlet definitions (alphabetical by complete class name) -->
+    <servlet>
+        <servlet-name>ProductsArea</servlet-name>
+        <servlet-class>products.shop.ProductsArea</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddProducts</servlet-name>
+        <servlet-class>products.shop.ProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductsAdd</servlet-name>
+        <servlet-class>products.shop.ProductsAdd</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductsEdit</servlet-name>
+        <servlet-class>products.shop.ProductsEdit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductsDelete</servlet-name>
+        <servlet-class>products.shop.ProductsDelete</servlet-class>
+    </servlet>
+
     <servlet>
         <servlet-name>DisplayInvoicesServlet</servlet-name>
         <servlet-class>music.admin.DisplayInvoicesServlet</servlet-class>
@@ -81,6 +107,31 @@
     </servlet>
 
     <!-- servlet mappings -->
+    <servlet-mapping>
+        <servlet-name>AddProducts</servlet-name>
+        <url-pattern>/admin/products</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddProducts</servlet-name>
+        <url-pattern>/admin/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductsArea</servlet-name>
+        <url-pattern>/admin/prod/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductsAdd</servlet-name>
+        <url-pattern>/admin/products/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductsEdit</servlet-name>
+        <url-pattern>/admin/products/edit/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductsDelete</servlet-name>
+        <url-pattern>/admin/products/delete/*</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>DisplayInvoicesServlet</servlet-name>
         <url-pattern>/admin/displayInvoices</url-pattern>
@@ -187,7 +238,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Admin</web-resource-name>
-            <url-pattern>/adminddd/*</url-pattern>
+            <url-pattern>/kaka/*</url-pattern>
         </web-resource-collection>
         <!-- Authorize the service and programmer roles -->
         <auth-constraint>
