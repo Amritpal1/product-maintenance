@@ -238,7 +238,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Admin</web-resource-name>
-            <url-pattern>/kaka/*</url-pattern>
+            <url-pattern>/admin/*</url-pattern>
         </web-resource-collection>
         <!-- Authorize the service and programmer roles -->
         <auth-constraint>
